@@ -26,7 +26,9 @@ class _MyLoginState extends State<MyLogin> {
             ),),
           ),
           SingleChildScrollView(
+            physics: ClampingScrollPhysics(parent: NeverScrollableScrollPhysics()),
                       child: Container(
+                       
               padding: EdgeInsets.only(top: height*0.5,left: width*0.1,right:width*0.1),
               child:Column(
                 children: [
@@ -51,6 +53,27 @@ class _MyLoginState extends State<MyLogin> {
                       borderRadius: BorderRadius.circular(10)
                     )
                   ),),
+                  SizedBox(
+                    height:height*0.05
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Sign In",
+                      style: TextStyle(fontSize: 27,
+                      fontWeight: FontWeight.w700),),
+                      CircleAvatar(
+                        radius: (height+width)/45,
+                        backgroundColor:Color(0xff4c505b),
+                        child: IconButton(onPressed: (){},
+                        
+                        color: Colors.white,
+                        icon:Icon(
+                          Icons.arrow_forward,
+                          size:(height+width)/60) ),
+                      )
+                    ],
+                  )
                 ],
               )
             ),
